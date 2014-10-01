@@ -130,7 +130,7 @@ public class StatementDeParser implements StatementVisitor {
 		SelectDeParser selectDeParser = new SelectDeParser();
 		selectDeParser.setBuffer(buffer);
 		ExpressionDeParser expressionDeParser = new ExpressionDeParser(selectDeParser, buffer);
-		UpdateDeParser updateDeParser = new UpdateDeParser(expressionDeParser, buffer);
+		UpdateDeParser updateDeParser = new UpdateDeParser(expressionDeParser, selectDeParser, buffer);
 		selectDeParser.setExpressionVisitor(expressionDeParser);
 		updateDeParser.deParse(update);
 
